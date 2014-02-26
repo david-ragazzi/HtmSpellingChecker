@@ -14,8 +14,8 @@ Currently supported platforms:
  * Mac OSX
 
 Dependencies:
- * [Mono](https://github.com/numenta/nupic-linux64) or [.Net](https://github.com/numenta/nupic-linux64) framework
- * [MonoDevelop](http://monodevelop.com/Download) or [Visual Studio](https://github.com/numenta/nupic-linux64)  IDE
+ * [Mono](http://www.mono-project.com) or [.Net](http://www.microsoft.com/net) framework
+ * [MonoDevelop](http://monodevelop.com/Download) or [Visual Studio](http://www.visualstudio.com/) IDE
 
 ## Running from the IDE:
 
