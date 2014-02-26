@@ -13,7 +13,7 @@ Currently supported platforms:
  * Linux
  * Mac OSX
 
-Dependencies:
+Required tools:
  * [Mono](http://www.mono-project.com) or [.Net](http://www.microsoft.com/net) framework
  * [MonoDevelop](http://monodevelop.com/Download) or [Visual Studio](http://www.visualstudio.com/) IDE
 
