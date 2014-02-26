@@ -25,7 +25,6 @@ Required tools:
 
 ## Run the tests:
 
- * Open the IDE executable.
  * Specify the text to be tested [1].
  * Specify the size of sets to be tested [2].
  * Click 'Test'.
