@@ -29,6 +29,8 @@ Required tools:
     <img title="Main Form" src="https://github.com/DavidRagazzi/HtmSpellingChecker/tree/Release/MainForm.png"/>
 </div>
 
+(put Main Form image here)
+
  * Specify the text to be tested [1].
  * Specify the size of sets to be tested [2].
  * Click 'Test'.
