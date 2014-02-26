@@ -20,7 +20,7 @@ Required tools:
 ## Running from the IDE:
 
  * Open the IDE executable.
- * Open 'HtmSpellingChecker.sln' solution file located on <code>/source</code> folder.
+ * Open 'HtmSpellingChecker.sln' solution file located on <code>/Source</code> folder.
  * Click 'Run'.
 
 ## Run the tests:
