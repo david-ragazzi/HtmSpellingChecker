@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="5d8dabe0-f16e-4367-9426-618853643bdc" name="CheckSpelling" linkedPackageId="4b2def5f-8089-40f1-adb4-c3cabb3f4359" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="8f178081-5bb1-4865-91b1-559fa34090f8" name="CheckSpelling" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="462e87d4-0195-46a2-b6e8-a6991aab4924" />
+        <nodes>
+          <initialNode Id="836a8896-d0d5-4ed9-bfb2-440389e947a4" name="Initial1" isLeaf="false">
+            <elementDefinition Id="08d4acc6-2ea7-43e0-a71b-8e890404b6aa" />
+            <flowNodeTargets>
+              <controlFlow Id="5a06b9c0-eab0-470b-9ac0-d3b982649efb" isLeaf="false">
+                <decisionNodeMoniker Id="5f5b685e-3e40-432f-8a37-990a55bd7cef" LastKnownName="Decision7" />
+                <elementDefinition Id="ca8b407d-cde9-4033-977a-46337e32dbea" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="a020fff1-7b48-4435-9c86-5775a526b54b" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="31a8fc2d-96bc-4a22-bec8-c3ac40edbd24" />
+          </activityFinalNode>
+          <opaqueAction Id="c68c3f81-9375-4ecd-bf02-4df7b789a060" name="Get current word from analysed text" isLeaf="false">
+            <elementDefinition Id="5aa70d83-c630-47be-b399-9fee97681343" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="0b8be927-8bf7-4daf-a004-ad4e3fd11077" name="CurrentWord" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="614fb850-db60-4f8f-9c39-fb4bc5ced395" />
+                  <objectFlowTargets>
+                    <objectFlow Id="ab7aa0bb-7499-48bb-8ef6-35f4f473b0d1" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="54177032-53a8-4531-802c-172b1ed31162" LastKnownName="Get predict word from HTM" />
+                      <elementDefinition Id="b38d47a6-fbd9-4285-9ed1-7ec8b09c8a18" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="97f07d6d-bc2a-4bdb-bfb8-beea61029440" name="2147483647" value="2147483647">
+                      <elementDefinition Id="c5a6fdd1-77a2-49c3-8f85-f04c7081b46e" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="54177032-53a8-4531-802c-172b1ed31162" name="Get predict word from HTM" isLeaf="false">
+            <elementDefinition Id="9ef22018-7559-4c79-b92d-3e704a42ea30" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="be5d57d3-2295-4dd6-a732-59af45f3c661" name="PredictedWord" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="88d2635a-a589-4981-8ed1-830836d17b49" />
+                  <objectFlowTargets>
+                    <objectFlow Id="1f61ab59-b1c0-4c2e-8314-687adf080ca9" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="9a93b9eb-63e9-49f2-bbc8-2d84b7d1e946" LastKnownName="Checks if CurrentWord exists in Dictionary" />
+                      <elementDefinition Id="228b4f2e-c2b2-4644-851b-5682725c5fb9" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="ba910c45-5c60-4756-ad73-82b60fc266b1" name="2147483647" value="2147483647">
+                      <elementDefinition Id="0fc27b8e-349c-41af-985a-f96e0e0e15ea" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="9a93b9eb-63e9-49f2-bbc8-2d84b7d1e946" name="Checks if CurrentWord exists in Dictionary" isLeaf="false">
+            <elementDefinition Id="caaaf3ed-e64f-486c-a8e6-c75c0ddbb027" />
+            <flowNodeTargets>
+              <controlFlow Id="2f007602-1976-411c-a3a3-ccea86ec5fa8" isLeaf="false">
+                <decisionNodeMoniker Id="d9e802b7-d568-49a5-808a-f325a579dd67" LastKnownName="Decision1" />
+                <elementDefinition Id="f19b93c6-96de-4f50-8177-43e63e49ec74" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="d9e802b7-d568-49a5-808a-f325a579dd67" name="Decision1" isLeaf="false">
+            <elementDefinition Id="de77d201-dce9-4ac8-9f3b-3d6e991eb69e" />
+            <flowNodeTargets>
+              <controlFlow Id="c69aa994-2534-447b-b7a4-7214a7fafea9" guard="It exists" isLeaf="false">
+                <opaqueActionMoniker Id="09e9161c-2c82-401f-b77c-b919cfc73edb" LastKnownName="Checks if CurrentWord is similar but not equal to PredictedWord" />
+                <elementDefinition Id="b31f16b7-31d6-4543-ba93-ce763d8aa2a4" />
+              </controlFlow>
+              <controlFlow Id="ff371570-9a21-45cd-ad3c-669b93eef555" guard="It does not exist" isLeaf="false">
+                <opaqueActionMoniker Id="2f1f9303-27af-4b15-8ded-7df99a8dccd1" LastKnownName="Checks if exists some word on right side of CurrentWord" />
+                <elementDefinition Id="55cbea6e-1268-48a4-9bad-4510a0812e45" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="6ba64ee9-13e1-41d8-b2dc-6d51610f3bb2" name="Get similiar words to CurrentWord" isLeaf="false">
+            <elementDefinition Id="f20137cc-c677-4822-8d34-2f824146c329" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="f4d5e738-1516-47b0-a92b-b6bc13dfb6f4" name="SimilarWords[]" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="edc4feb8-c1f7-4cc4-9fe4-ced214d7790f" />
+                  <objectFlowTargets>
+                    <objectFlow Id="db5c2a82-871f-4535-81e8-5a3b65735bcc" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <decisionNodeMoniker Id="5f807426-a3ab-4ba9-b74d-8089be0e26f5" LastKnownName="Decision6" />
+                      <elementDefinition Id="1a09e3ca-6e3c-48f5-9001-d315e81f2621" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="4ff47dbb-6c12-48d8-a444-d1801a2b4e0c" name="2147483647" value="2147483647">
+                      <elementDefinition Id="3f0f0d10-0b4a-4c07-822c-c2695b756a64" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="4c1bae2f-e62c-4459-a6d3-03b5dc3cceb7" name="Get word on right side of CurrentWord" isLeaf="false">
+            <elementDefinition Id="3df4b960-80f7-4388-9581-437e03e1a2ba" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="875b264c-099e-4de5-a966-932a1030b5ff" name="NextWord" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="f31cf9a2-812b-42bb-a60f-9b3b98354961" />
+                  <objectFlowTargets>
+                    <objectFlow Id="072913f9-ccf9-4617-b92b-07a43d14d0d2" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="6ba64ee9-13e1-41d8-b2dc-6d51610f3bb2" LastKnownName="Get similiar words to CurrentWord" />
+                      <elementDefinition Id="6fda6328-c541-4d08-a0e7-007256390e0a" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="efc8ceb7-0dbb-462e-9be6-4bbb272808c8" name="2147483647" value="2147483647">
+                      <elementDefinition Id="63e28f82-3b4f-4b6e-8540-ee5a23fcc573" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="09e9161c-2c82-401f-b77c-b919cfc73edb" name="Checks if CurrentWord is similar but not equal to PredictedWord" isLeaf="false">
+            <elementDefinition Id="eb881f00-70a2-4cbb-ad61-3ebee46d1c57" />
+            <flowNodeTargets>
+              <controlFlow Id="64f92a30-68ae-4deb-8112-2d67ac11bdd9" isLeaf="false">
+                <decisionNodeMoniker Id="31331209-70cd-4ea1-bd03-cb651420f5af" LastKnownName="Decision2" />
+                <elementDefinition Id="ced035c3-33ea-4f2d-9411-56a564a55671" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6b13e70e-a7e6-41a6-a799-cb4c23fb771c" name="Emits ERROR issue" isLeaf="false">
+            <elementDefinition Id="8c233095-13e6-4574-b0ef-6b8773db2075" />
+            <flowNodeTargets>
+              <controlFlow Id="3adec02a-1a61-4741-8a35-f61372ae2672" isLeaf="false">
+                <mergeNodeMoniker Id="4a014859-b9a0-4192-ab43-f088b15fa59e" LastKnownName="Merge1" />
+                <elementDefinition Id="f8ccb751-2ac3-47f7-b895-7b5fc2ad8487" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="31331209-70cd-4ea1-bd03-cb651420f5af" name="Decision2" isLeaf="false">
+            <elementDefinition Id="f7527527-b30a-4780-996c-a4805b40f70a" />
+            <flowNodeTargets>
+              <controlFlow Id="454f3917-4a2d-48bf-866d-1a34b5208073" guard="It is similar but not equal" isLeaf="false">
+                <opaqueActionMoniker Id="e3ad58ac-2ea9-4f96-bb58-3e58d9c84353" LastKnownName="Add PredictedWord to list of suggestions" />
+                <elementDefinition Id="391e7e10-f6b6-4e51-bb40-395227a21fa9" />
+              </controlFlow>
+              <controlFlow Id="c984f355-000b-4a45-afa7-9cfbd13a91e7" guard="It is not similar" isLeaf="false">
+                <mergeNodeMoniker Id="4a014859-b9a0-4192-ab43-f088b15fa59e" LastKnownName="Merge1" />
+                <elementDefinition Id="84292d0b-a844-44ed-b4e6-cce04e1b1aff" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="e3ad58ac-2ea9-4f96-bb58-3e58d9c84353" name="Add PredictedWord to list of suggestions" isLeaf="false">
+            <elementDefinition Id="cc20c6d3-d0e1-4d30-b8ed-31207ef34f72" />
+            <flowNodeTargets>
+              <controlFlow Id="46a6e31c-3136-4df1-9a37-d552c6ee3b14" isLeaf="false">
+                <opaqueActionMoniker Id="c95dd23d-260d-4bfc-95c1-a2edb2b3da48" LastKnownName="Emits WARNING issue" />
+                <elementDefinition Id="947f31e3-a732-4ca8-9064-c8d037e0abfc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a1e99823-8394-4cfe-a92c-be01265a3c99" name="Advances one time step in HTM controller passing SimilarWord as input" isLeaf="false">
+            <elementDefinition Id="09df232a-3228-4eb9-8efd-39bed25f46cd" />
+            <flowNodeTargets>
+              <controlFlow Id="f4cb8509-f2bd-4ac6-9b6c-6beb82dc66b7" isLeaf="false">
+                <opaqueActionMoniker Id="105e0f1a-6212-4b9e-b4bf-09d30e2b9ea3" LastKnownName="Get predict word from HTM" />
+                <elementDefinition Id="cf53da79-9afc-41b7-a31e-737610d6d5b1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="105e0f1a-6212-4b9e-b4bf-09d30e2b9ea3" name="Get predict word from HTM" isLeaf="false">
+            <elementDefinition Id="6791ced9-85ea-42a2-982c-d95daa7a72b0" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="a4cf9267-f326-4f99-ba8d-bff16497e4dc" name="PredictedWord" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="90d6e358-afe0-4dc5-9fe2-1ac97376cecb" />
+                  <objectFlowTargets>
+                    <objectFlow Id="9d8a74b1-d4c0-4363-b78d-d76d7b97dd3a" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="60e65aab-9dbc-4b44-929b-52fe36911de9" LastKnownName="Checks if PredictedWord is equal to NextWord " />
+                      <elementDefinition Id="c0649bf4-7aea-4d1a-9878-8f7b000e41db" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="1e3063d5-17c7-427e-b068-c723b1469df5" name="2147483647" value="2147483647">
+                      <elementDefinition Id="1a278562-234f-4fe7-b895-0a052488cdc7" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="60e65aab-9dbc-4b44-929b-52fe36911de9" name="Checks if PredictedWord is equal to NextWord " isLeaf="false">
+            <elementDefinition Id="36a74c78-52a3-403c-92e9-c73c7ee9144a" />
+            <flowNodeTargets>
+              <controlFlow Id="0f72d8a4-0789-492d-9e36-4be2521c4a08" isLeaf="false">
+                <decisionNodeMoniker Id="f4204ddf-181f-48ee-9c1d-cb77111eebf4" LastKnownName="Decision5" />
+                <elementDefinition Id="43d20953-1d47-48e1-ba60-d8d06568bbd7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="f4204ddf-181f-48ee-9c1d-cb77111eebf4" name="Decision5" isLeaf="false">
+            <elementDefinition Id="99fd7354-3123-4559-a324-367ecb9d319b" />
+            <flowNodeTargets>
+              <controlFlow Id="91f7a26e-bd65-4127-bdb3-037a50ba7b7c" guard="It is equal" isLeaf="false">
+                <opaqueActionMoniker Id="063e52b6-ee5f-45db-8b21-4c47354358aa" LastKnownName="Add SimilarWord to list of suggestions" />
+                <elementDefinition Id="197e9792-d8f9-4ce5-a269-a558c252a3d4" />
+              </controlFlow>
+              <controlFlow Id="cd02535e-4426-42b2-aa85-767d4d431aef" guard="It is not equal" isLeaf="false">
+                <mergeNodeMoniker Id="3c14edce-2f11-40dc-8b4f-828d7d832ca2" LastKnownName="Merge2" />
+                <elementDefinition Id="b5020084-9c8c-44f0-8d5b-6afcdd95c2ea" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="063e52b6-ee5f-45db-8b21-4c47354358aa" name="Add SimilarWord to list of suggestions" isLeaf="false">
+            <elementDefinition Id="82e5a32f-cb43-48a4-9543-c339a1c6a5cf" />
+            <flowNodeTargets>
+              <controlFlow Id="47b677ce-c37a-4476-8521-2e96f32971da" isLeaf="false">
+                <mergeNodeMoniker Id="3c14edce-2f11-40dc-8b4f-828d7d832ca2" LastKnownName="Merge2" />
+                <elementDefinition Id="436996ba-80b1-49be-bc33-917f3df63185" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="3c14edce-2f11-40dc-8b4f-828d7d832ca2" name="Merge2" isLeaf="false">
+            <elementDefinition Id="8f435d23-e3a9-4f19-b53a-d00b71ba4e5d" />
+            <flowNodeTargets>
+              <controlFlow Id="6003196c-a738-4fb6-ad16-670d948f65a5" isLeaf="false">
+                <opaqueActionMoniker Id="6b13e70e-a7e6-41a6-a799-cb4c23fb771c" LastKnownName="Emits ERROR issue" />
+                <elementDefinition Id="fbf102ed-84c9-4636-ae4b-bdd9d0dbbfd7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="2f1f9303-27af-4b15-8ded-7df99a8dccd1" name="Checks if exists some word on right side of CurrentWord" isLeaf="false">
+            <elementDefinition Id="76c639a1-8070-4e1a-8ef1-38b0e980af2d" />
+            <flowNodeTargets>
+              <controlFlow Id="c4f628ef-c269-4ac0-a72f-9818eb087818" isLeaf="false">
+                <decisionNodeMoniker Id="4ee82c34-ac30-4edf-8031-d17bb9aba1b4" LastKnownName="Decision3" />
+                <elementDefinition Id="545bf41a-0b62-4bce-a49f-af14b853f02b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="4ee82c34-ac30-4edf-8031-d17bb9aba1b4" name="Decision3" isLeaf="false">
+            <elementDefinition Id="6f1297ff-9f3b-4a1d-9a13-34f2430d596e" />
+            <flowNodeTargets>
+              <controlFlow Id="e43d96f4-51b3-44d7-9e77-791bcb586bfd" guard="It exists" isLeaf="false">
+                <opaqueActionMoniker Id="4c1bae2f-e62c-4459-a6d3-03b5dc3cceb7" LastKnownName="Get word on right side of CurrentWord" />
+                <elementDefinition Id="2111236b-42e5-48e3-b011-340708583d6b" />
+              </controlFlow>
+              <controlFlow Id="76ddb9be-3d93-4eb7-a622-82e049d8ba04" guard="It does not exist" isLeaf="false">
+                <opaqueActionMoniker Id="7c51d7fe-d65a-4ec9-880a-a3b3731fd101" LastKnownName="Checks if CurrentWord is similar to PredictedWord" />
+                <elementDefinition Id="6f6dc44d-1970-4bad-ba77-2a2f1bc829ae" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="7c51d7fe-d65a-4ec9-880a-a3b3731fd101" name="Checks if CurrentWord is similar to PredictedWord" isLeaf="false">
+            <elementDefinition Id="eca85f1e-34a7-4e19-b629-6baf19b6effb" />
+            <flowNodeTargets>
+              <controlFlow Id="c6d5268f-625a-43c2-b3ba-a4f8b2e738f1" isLeaf="false">
+                <decisionNodeMoniker Id="1964b1df-4b44-40c8-8d27-1189a5600aad" LastKnownName="Decision4" />
+                <elementDefinition Id="681f347c-c45c-4f4d-b4ba-e50693823f73" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="1964b1df-4b44-40c8-8d27-1189a5600aad" name="Decision4" isLeaf="false">
+            <elementDefinition Id="06ec1b8c-253e-494b-ad4a-4139d540492f" />
+            <flowNodeTargets>
+              <controlFlow Id="677e1c68-1951-4291-9105-cdd6621f3850" guard="It is similar" isLeaf="false">
+                <opaqueActionMoniker Id="de912cf8-b02e-493c-a501-631db2f84462" LastKnownName="Add PredictedWord to list of suggestions" />
+                <elementDefinition Id="f589b600-4419-4724-9bbb-02c16b4e3939" />
+              </controlFlow>
+              <controlFlow Id="a820be11-a587-4895-9ea4-b26cb465dd2d" guard="It is not similar" isLeaf="false">
+                <opaqueActionMoniker Id="6b13e70e-a7e6-41a6-a799-cb4c23fb771c" LastKnownName="Emits ERROR issue" />
+                <elementDefinition Id="1af5038e-c5f2-4b2a-b1db-c6106f2b73f4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="de912cf8-b02e-493c-a501-631db2f84462" name="Add PredictedWord to list of suggestions" isLeaf="false">
+            <elementDefinition Id="2e5a2ce1-5bbe-4550-98f8-60e9efa2e69e" />
+            <flowNodeTargets>
+              <controlFlow Id="6b20bf7b-24f9-4307-91ff-3466adad740e" isLeaf="false">
+                <opaqueActionMoniker Id="6b13e70e-a7e6-41a6-a799-cb4c23fb771c" LastKnownName="Emits ERROR issue" />
+                <elementDefinition Id="6019563e-3ee6-4bc5-9cf3-7a558939a519" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c95dd23d-260d-4bfc-95c1-a2edb2b3da48" name="Emits WARNING issue" isLeaf="false">
+            <elementDefinition Id="35c89e92-a5a6-4bd3-8017-b16d1744de13" />
+            <flowNodeTargets>
+              <controlFlow Id="2fb21f41-7aec-4b6f-a7b2-0a84f1b78b29" isLeaf="false">
+                <mergeNodeMoniker Id="4a014859-b9a0-4192-ab43-f088b15fa59e" LastKnownName="Merge1" />
+                <elementDefinition Id="1cc7066b-470b-43b9-b0f1-c24fd6ccb86a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="5f807426-a3ab-4ba9-b74d-8089be0e26f5" name="Decision6" isLeaf="false">
+            <elementDefinition Id="fcbcbb10-9b92-4752-a3fc-67cdc505376a" />
+            <flowNodeTargets>
+              <controlFlow Id="452518f9-2830-489f-85db-a38804bd0353" guard="No more words to test" isLeaf="false">
+                <mergeNodeMoniker Id="3c14edce-2f11-40dc-8b4f-828d7d832ca2" LastKnownName="Merge2" />
+                <elementDefinition Id="1ee821f8-a61e-49b3-8bdf-d68490e4c23c" />
+              </controlFlow>
+              <controlFlow Id="94fcb40e-96e1-44fd-855e-2a70252454d0" guard="Test similar word" isLeaf="false">
+                <opaqueActionMoniker Id="9a758296-5c23-4df8-914f-7124c8e978d1" LastKnownName="Get similar word from list" />
+                <elementDefinition Id="ef38c931-3cac-4219-8393-1ada37b1890d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="5f5b685e-3e40-432f-8a37-990a55bd7cef" name="Decision7" isLeaf="false">
+            <elementDefinition Id="85ef3326-be41-4089-9d48-06bd9d82c818" />
+            <flowNodeTargets>
+              <controlFlow Id="da1cd89c-73e3-4645-8906-81f3426ebffe" isLeaf="false">
+                <opaqueActionMoniker Id="c68c3f81-9375-4ecd-bf02-4df7b789a060" LastKnownName="Get current word from analysed text" />
+                <elementDefinition Id="6af11a88-202a-4762-9941-f7e738cda99a" />
+              </controlFlow>
+              <controlFlow Id="cbf1da7e-5279-480c-8d3a-6aad1b6c27b9" guard="No more words to check" isLeaf="false">
+                <mergeNodeMoniker Id="4a014859-b9a0-4192-ab43-f088b15fa59e" LastKnownName="Merge1" />
+                <elementDefinition Id="2dc70f5a-c05e-441e-b108-2cffdfd98219" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode Id="4a014859-b9a0-4192-ab43-f088b15fa59e" name="Merge1" isLeaf="false">
+            <elementDefinition Id="7a1f5fbd-4682-4c94-81b3-80383a2ab6ee" />
+            <flowNodeTargets>
+              <controlFlow Id="11b6ef42-8192-48c1-b4e7-f5db4cbd0d94" isLeaf="false">
+                <activityFinalNodeMoniker Id="a020fff1-7b48-4435-9c86-5775a526b54b" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="a174275b-fe7b-4913-aff5-ed8cb5bde840" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="9a758296-5c23-4df8-914f-7124c8e978d1" name="Get similar word from list" isLeaf="false">
+            <elementDefinition Id="314fb9e8-93fb-4e97-87e2-86a634f8b76e" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="63aedaad-65b3-40f6-810a-7d3d20f85cc8" name="SimilarWord" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="14b54038-39ef-46a4-8735-969b52559209" />
+                  <objectFlowTargets>
+                    <objectFlow Id="bb5781fd-cda4-4a9b-b0a5-a459dc759dae" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="a1e99823-8394-4cfe-a92c-be01265a3c99" LastKnownName="Advances one time step in HTM controller passing SimilarWord as input" />
+                      <elementDefinition Id="863d02d9-2438-46dc-b028-2cf2a97ce1f7" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="fc414b58-4b20-492e-b5ee-d7ef8da6a882" name="2147483647" value="2147483647">
+                      <elementDefinition Id="843842fb-c28e-4cee-899d-a85a5b9a78b3" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="4b2def5f-8089-40f1-adb4-c3cabb3f4359" name="ModelingDiagrams">
+    <elementDefinition Id="0a2f9a5c-3587-4a4c-ac26-7a773a3ac29d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="94157fc8-403e-4d8a-a36d-a37742f3e740">
+        <profileInstance Id="78d558ae-d029-41c9-897a-d28556a419ed" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="84a0caee-827f-4c8d-81f0-5d4ca37d01c4">
+        <profileInstance Id="9b0bce84-ecaa-40ce-86a6-6030f569e815" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

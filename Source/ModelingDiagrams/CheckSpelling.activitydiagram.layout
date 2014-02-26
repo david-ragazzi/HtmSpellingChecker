@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 15.5" name="CheckSpelling">
+  <activityRootModelMoniker Id="5d8dabe0-f16e-4367-9426-618853643bdc" />
+  <nestedChildShapes>
+    <initialNodeShape Id="b631141e-95ac-4b47-8c2b-33b003eb7003" absoluteBounds="4.75, 0.5, 0.125, 0.125" customColor="89, 89, 89">
+      <initialNodeMoniker Id="836a8896-d0d5-4ed9-bfb2-440389e947a4" LastKnownName="Initial1" />
+    </initialNodeShape>
+    <activityFinalNodeShape Id="58b81fb8-2b24-44cb-84dc-074c3954b87d" absoluteBounds="4.75, 15, 0.125, 0.125" customColor="89, 89, 89">
+      <activityFinalNodeMoniker Id="a020fff1-7b48-4435-9c86-5775a526b54b" LastKnownName="ActivityFinal1" />
+    </activityFinalNodeShape>
+    <actionShape Id="2d0d97ec-3eb2-43a1-ae3e-4fe457c7a12f" absoluteBounds="4.25, 1.5, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="c68c3f81-9375-4ecd-bf02-4df7b789a060" LastKnownName="Get current word from analysed text" />
+      <relativeChildShapes>
+        <outputPinShape Id="468b55f5-2a11-461d-8f41-2bb19b961d78" absoluteBounds="4.71875, 1.875, 0.15, 0.15">
+          <outputPinMoniker Id="0b8be927-8bf7-4daf-a004-ad4e3fd11077" LastKnownName="CurrentWord" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.90625, 1.875, 0.68417239189147949, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <actionShape Id="e18ed982-9925-453f-a1eb-c85fef487617" absoluteBounds="4.25, 2.25, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="54177032-53a8-4531-802c-172b1ed31162" LastKnownName="Get predict word from HTM" />
+      <relativeChildShapes>
+        <outputPinShape Id="9d9de62f-fb77-4f82-a26c-c9c823105a8f" absoluteBounds="4.75, 2.625, 0.15, 0.15">
+          <outputPinMoniker Id="be5d57d3-2295-4dd6-a732-59af45f3c661" LastKnownName="PredictedWord" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.96875, 2.65625, 0.77537250518798828, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <actionShape Id="318fdb30-1cf8-4b62-9c1b-855ed0cd413e" absoluteBounds="4.25, 3, 1.125, 0.625" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="9a93b9eb-63e9-49f2-bbc8-2d84b7d1e946" LastKnownName="Checks if CurrentWord exists in Dictionary" />
+    </actionShape>
+    <objectFlowConnector edgePoints="[(4.825 : 2.775); (4.825 : 3)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="1f61ab59-b1c0-4c2e-8314-687adf080ca9" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="9d9de62f-fb77-4f82-a26c-c9c823105a8f" />
+        <actionShapeMoniker Id="318fdb30-1cf8-4b62-9c1b-855ed0cd413e" />
+      </nodes>
+    </objectFlowConnector>
+    <decisionNodeShape Id="fd57f133-a075-4542-a0f7-35f03ad63ca0" absoluteBounds="4.625, 3.875, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="d9e802b7-d568-49a5-808a-f325a579dd67" LastKnownName="Decision1" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 3.625); (4.8125 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="2f007602-1976-411c-a3a3-ccea86ec5fa8" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="318fdb30-1cf8-4b62-9c1b-855ed0cd413e" />
+        <decisionNodeShapeMoniker Id="fd57f133-a075-4542-a0f7-35f03ad63ca0" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="3954051b-c6d1-4c83-b841-a21c9ace8458" absoluteBounds="6.5, 6.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="6ba64ee9-13e1-41d8-b2dc-6d51610f3bb2" LastKnownName="Get similiar words to CurrentWord" />
+      <relativeChildShapes>
+        <outputPinShape Id="bf83c3fa-12ef-4a28-8bd4-1e2dd78647da" absoluteBounds="7, 7, 0.15, 0.15">
+          <outputPinMoniker Id="f4d5e738-1516-47b0-a92b-b6bc13dfb6f4" LastKnownName="SimilarWords[]" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.1875, 7.03125, 0.78519237041473389, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <actionShape Id="90387114-e6c8-449e-a24a-6436cc9b125b" absoluteBounds="6.5, 5.875, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="4c1bae2f-e62c-4459-a6d3-03b5dc3cceb7" LastKnownName="Get word on right side of CurrentWord" />
+      <relativeChildShapes>
+        <outputPinShape Id="494ae6c7-38ba-4241-a2dc-54bc2bbbbcc2" absoluteBounds="7, 6.25, 0.15, 0.15">
+          <outputPinMoniker Id="875b264c-099e-4de5-a966-932a1030b5ff" LastKnownName="NextWord" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.21875, 6.25, 0.53839331865310669, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <actionShape Id="99c5a032-46bd-469a-9698-669522a56417" absoluteBounds="4.25, 5.75, 1.125, 0.875" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="09e9161c-2c82-401f-b77c-b919cfc73edb" LastKnownName="Checks if CurrentWord is similar but not equal to PredictedWord" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 4.25); (4.8125 : 5.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="c69aa994-2534-447b-b7a4-7214a7fafea9" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="fd57f133-a075-4542-a0f7-35f03ad63ca0" />
+        <actionShapeMoniker Id="99c5a032-46bd-469a-9698-669522a56417" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="b59c9d87-ca69-44c0-acf5-2cc846f89818" absoluteBounds="6.5, 13.5, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="6b13e70e-a7e6-41a6-a799-cb4c23fb771c" LastKnownName="Emits ERROR issue" />
+    </actionShape>
+    <decisionNodeShape Id="aa894a0c-94b7-4942-9cdd-9334c9549be3" absoluteBounds="4.625, 6.875, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="31331209-70cd-4ea1-bd03-cb651420f5af" LastKnownName="Decision2" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 6.625); (4.8125 : 6.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="64f92a30-68ae-4deb-8112-2d67ac11bdd9" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="99c5a032-46bd-469a-9698-669522a56417" />
+        <decisionNodeShapeMoniker Id="aa894a0c-94b7-4942-9cdd-9334c9549be3" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="6a95c959-9fb5-4df3-bae8-a44e73ac1063" absoluteBounds="4.25, 8.875, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="e3ad58ac-2ea9-4f96-bb58-3e58d9c84353" LastKnownName="Add PredictedWord to list of suggestions" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 7.25); (4.8125 : 8.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="454f3917-4a2d-48bf-866d-1a34b5208073" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.875, 7.1875, 1.3916919231414795, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="aa894a0c-94b7-4942-9cdd-9334c9549be3" />
+        <actionShapeMoniker Id="6a95c959-9fb5-4df3-bae8-a44e73ac1063" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="08a82f1e-9f38-4d3e-be15-6c1ac6310408" absoluteBounds="6.5, 8.875, 1.125, 0.75" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="a1e99823-8394-4cfe-a92c-be01265a3c99" LastKnownName="Advances one time step in HTM controller passing SimilarWord as input" />
+    </actionShape>
+    <objectFlowConnector edgePoints="[(7.075 : 6.4); (7.075 : 6.625)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="072913f9-ccf9-4617-b92b-07a43d14d0d2" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="494ae6c7-38ba-4241-a2dc-54bc2bbbbcc2" />
+        <actionShapeMoniker Id="3954051b-c6d1-4c83-b841-a21c9ace8458" />
+      </nodes>
+    </objectFlowConnector>
+    <actionShape Id="b2254bc2-8f0d-48ab-815c-8553825862ba" absoluteBounds="6.5, 9.875, 1.125, 0.5" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="105e0f1a-6212-4b9e-b4bf-09d30e2b9ea3" LastKnownName="Get predict word from HTM" />
+      <relativeChildShapes>
+        <outputPinShape Id="50b663e2-c78d-4948-bd49-ad56807f44d5" absoluteBounds="7, 10.375, 0.15, 0.15">
+          <outputPinMoniker Id="a4cf9267-f326-4f99-ba8d-bff16497e4dc" LastKnownName="PredictedWord" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.1875, 10.40625, 0.77537250518798828, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <actionShape Id="4b604e29-a9ab-45b0-949a-a6c3e7068fea" absoluteBounds="6.5, 10.75, 1.125, 0.625" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="60e65aab-9dbc-4b44-929b-52fe36911de9" LastKnownName="Checks if PredictedWord is equal to NextWord " />
+    </actionShape>
+    <decisionNodeShape Id="d3c4e21b-7be2-42f1-aa64-4c3a0d68d59d" absoluteBounds="6.875, 11.625, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="f4204ddf-181f-48ee-9c1d-cb77111eebf4" LastKnownName="Decision5" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <actionShape Id="ce627b36-73db-4452-8ea8-f6cedcb1970f" absoluteBounds="6.5, 12.25, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="063e52b6-ee5f-45db-8b21-4c47354358aa" LastKnownName="Add SimilarWord to list of suggestions" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(7.0625 : 9.625); (7.0625 : 9.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="f4cb8509-f2bd-4ac6-9b6c-6beb82dc66b7" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="08a82f1e-9f38-4d3e-be15-6c1ac6310408" />
+        <actionShapeMoniker Id="b2254bc2-8f0d-48ab-815c-8553825862ba" />
+      </nodes>
+    </controlFlowConnector>
+    <objectFlowConnector edgePoints="[(7.075 : 10.525); (7.075 : 10.75)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="9d8a74b1-d4c0-4363-b78d-d76d7b97dd3a" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="50b663e2-c78d-4948-bd49-ad56807f44d5" />
+        <actionShapeMoniker Id="4b604e29-a9ab-45b0-949a-a6c3e7068fea" />
+      </nodes>
+    </objectFlowConnector>
+    <controlFlowConnector edgePoints="[(7.0625 : 11.375); (7.0625 : 11.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="0f72d8a4-0789-492d-9e36-4be2521c4a08" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="4b604e29-a9ab-45b0-949a-a6c3e7068fea" />
+        <decisionNodeShapeMoniker Id="d3c4e21b-7be2-42f1-aa64-4c3a0d68d59d" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(7.0625 : 12); (7.0625 : 12.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="91f7a26e-bd65-4127-bdb3-037a50ba7b7c" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.375, 12, 0.62791156768798828, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="d3c4e21b-7be2-42f1-aa64-4c3a0d68d59d" />
+        <actionShapeMoniker Id="ce627b36-73db-4452-8ea8-f6cedcb1970f" />
+      </nodes>
+    </controlFlowConnector>
+    <mergeNodeShape Id="ea874a3c-3701-4b11-9d7a-9174a448fd13" absoluteBounds="6.875, 12.875, 0.375, 0.375" customColor="185, 212, 238">
+      <mergeNodeMoniker Id="3c14edce-2f11-40dc-8b4f-828d7d832ca2" LastKnownName="Merge2" />
+      <relativeChildShapes />
+    </mergeNodeShape>
+    <controlFlowConnector edgePoints="[(7.0625 : 12.625); (7.0625 : 12.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="47b677ce-c37a-4476-8521-2e96f32971da" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.3903446719050407, 12.694444440305233, 0.125, 0.1341145783662796" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <actionShapeMoniker Id="ce627b36-73db-4452-8ea8-f6cedcb1970f" />
+        <mergeNodeShapeMoniker Id="ea874a3c-3701-4b11-9d7a-9174a448fd13" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(7.0625 : 13.25); (7.0625 : 13.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="6003196c-a738-4fb6-ad16-670d948f65a5" />
+      <relativeChildShapes />
+      <nodes>
+        <mergeNodeShapeMoniker Id="ea874a3c-3701-4b11-9d7a-9174a448fd13" />
+        <actionShapeMoniker Id="b59c9d87-ca69-44c0-acf5-2cc846f89818" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(7.21941448528758 : 11.8430855147124); (8.34375 : 11.8430855147124); (8.34375 : 13.0625); (7.25 : 13.0625)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="cd02535e-4426-42b2-aa85-767d4d431aef" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.3125, 11.625, 0.82788985967636108, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="d3c4e21b-7be2-42f1-aa64-4c3a0d68d59d" />
+        <mergeNodeShapeMoniker Id="ea874a3c-3701-4b11-9d7a-9174a448fd13" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="33d2392c-11f2-4418-8b8b-9ee59b2d6923" absoluteBounds="6.5, 4.375, 1.125, 0.625" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="2f1f9303-27af-4b15-8ded-7df99a8dccd1" LastKnownName="Checks if exists some word on right side of CurrentWord" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(5 : 4.0625); (7.0625 : 4.0625); (7.0625 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="ff371570-9a21-45cd-ad3c-669b93eef555" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.1505237553691865, 3.8750025, 0.94621670246124268, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="fd57f133-a075-4542-a0f7-35f03ad63ca0" />
+        <actionShapeMoniker Id="33d2392c-11f2-4418-8b8b-9ee59b2d6923" />
+      </nodes>
+    </controlFlowConnector>
+    <decisionNodeShape Id="da4a2870-6b95-4eee-b581-0bc9b02813a6" absoluteBounds="6.875, 5.25, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="4ee82c34-ac30-4edf-8031-d17bb9aba1b4" LastKnownName="Decision3" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(7.0625 : 5); (7.0625 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="c4f628ef-c269-4ac0-a72f-9818eb087818" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="33d2392c-11f2-4418-8b8b-9ee59b2d6923" />
+        <decisionNodeShapeMoniker Id="da4a2870-6b95-4eee-b581-0bc9b02813a6" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(7.0625 : 5.625); (7.0625 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="e43d96f4-51b3-44d7-9e77-791bcb586bfd" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.5, 5.625, 0.52488422393798828, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="da4a2870-6b95-4eee-b581-0bc9b02813a6" />
+        <actionShapeMoniker Id="90387114-e6c8-449e-a24a-6436cc9b125b" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="c4a8256a-f9c5-4551-b878-f2d3e4b85c16" absoluteBounds="8.75, 5.75, 1.125, 0.875" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="7c51d7fe-d65a-4ec9-880a-a3b3731fd101" LastKnownName="Checks if CurrentWord is similar to PredictedWord" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(7.25 : 5.4375); (9.3125 : 5.4375); (9.3125 : 5.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="76ddb9be-3d93-4eb7-a622-82e049d8ba04" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="da4a2870-6b95-4eee-b581-0bc9b02813a6" />
+        <actionShapeMoniker Id="c4a8256a-f9c5-4551-b878-f2d3e4b85c16" />
+      </nodes>
+    </controlFlowConnector>
+    <decisionNodeShape Id="44fac1e9-6076-4558-a8c1-241148e2c4f3" absoluteBounds="9.125, 6.875, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="1964b1df-4b44-40c8-8d27-1189a5600aad" LastKnownName="Decision4" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(9.3125 : 6.625); (9.3125 : 6.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="c6d5268f-625a-43c2-b3ba-a4f8b2e738f1" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="c4a8256a-f9c5-4551-b878-f2d3e4b85c16" />
+        <decisionNodeShapeMoniker Id="44fac1e9-6076-4558-a8c1-241148e2c4f3" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="e5a8a5ca-f032-4652-86d3-5f04f342b982" absoluteBounds="8.75, 8.875, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="de912cf8-b02e-493c-a501-631db2f84462" LastKnownName="Add PredictedWord to list of suggestions" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(9.3125 : 7.25); (9.3125 : 8.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="677e1c68-1951-4291-9105-cdd6621f3850" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="9.4375, 7.25, 0.68135124444961548, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="44fac1e9-6076-4558-a8c1-241148e2c4f3" />
+        <actionShapeMoniker Id="e5a8a5ca-f032-4652-86d3-5f04f342b982" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(9.3125 : 9.25); (9.3125 : 13.7442660550459); (7.625 : 13.7442660550459)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="6b20bf7b-24f9-4307-91ff-3466adad740e" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="e5a8a5ca-f032-4652-86d3-5f04f342b982" />
+        <actionShapeMoniker Id="b59c9d87-ca69-44c0-acf5-2cc846f89818" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(9.13626034875279 : 7.05123965124721); (8.56106144340057 : 7.05123965124721); (8.56106144340057 : 13.6013513513514); (7.625 : 13.6013513513514)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="a820be11-a587-4895-9ea4-b26cb465dd2d" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="8.1875, 6.875, 0.88132953643798828, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="44fac1e9-6076-4558-a8c1-241148e2c4f3" />
+        <actionShapeMoniker Id="b59c9d87-ca69-44c0-acf5-2cc846f89818" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="f326fa4d-d752-48d8-93bb-ad2a36bb066a" absoluteBounds="4.125, 13.5, 1.25, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="c95dd23d-260d-4bfc-95c1-a2edb2b3da48" LastKnownName="Emits WARNING issue" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 9.25); (4.8125 : 13.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="46a6e31c-3136-4df1-9a37-d552c6ee3b14" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="6a95c959-9fb5-4df3-bae8-a44e73ac1063" />
+        <actionShapeMoniker Id="f326fa4d-d752-48d8-93bb-ad2a36bb066a" />
+      </nodes>
+    </controlFlowConnector>
+    <decisionNodeShape Id="c648e428-d095-42a3-abb9-a2c0968cf19f" absoluteBounds="6.875, 7.5, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="5f807426-a3ab-4ba9-b74d-8089be0e26f5" LastKnownName="Decision6" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(6.8885649166065 : 7.7010649166065); (6.08757380756175 : 7.7010649166065); (6.08757380756175 : 13.0878762687012); (6.90037626870119 : 13.0878762687012)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="452518f9-2830-489f-85db-a38804bd0353" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.625, 7.5, 1.2568720579147339, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="c648e428-d095-42a3-abb9-a2c0968cf19f" />
+        <mergeNodeShapeMoniker Id="ea874a3c-3701-4b11-9d7a-9174a448fd13" />
+      </nodes>
+    </controlFlowConnector>
+    <objectFlowConnector edgePoints="[(7.075 : 7.15); (7.075 : 7.5125)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="db5c2a82-871f-4535-81e8-5a3b65735bcc" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="bf83c3fa-12ef-4a28-8bd4-1e2dd78647da" />
+        <decisionNodeShapeMoniker Id="c648e428-d095-42a3-abb9-a2c0968cf19f" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(4.79375 : 2.025); (4.79375 : 2.25)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="ab7aa0bb-7499-48bb-8ef6-35f4f473b0d1" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="468b55f5-2a11-461d-8f41-2bb19b961d78" />
+        <actionShapeMoniker Id="e18ed982-9925-453f-a1eb-c85fef487617" />
+      </nodes>
+    </objectFlowConnector>
+    <decisionNodeShape Id="9e13b1d4-04fe-48fa-9a97-dd1f412ff8c1" absoluteBounds="4.625, 0.875, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="5f5b685e-3e40-432f-8a37-990a55bd7cef" LastKnownName="Decision7" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(4.8125 : 0.625); (4.8125 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="5a06b9c0-eab0-470b-9ac0-d3b982649efb" />
+      <relativeChildShapes />
+      <nodes>
+        <initialNodeShapeMoniker Id="b631141e-95ac-4b47-8c2b-33b003eb7003" />
+        <decisionNodeShapeMoniker Id="9e13b1d4-04fe-48fa-9a97-dd1f412ff8c1" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(4.8125 : 1.25); (4.8125 : 1.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="da1cd89c-73e3-4645-8906-81f3426ebffe" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="9e13b1d4-04fe-48fa-9a97-dd1f412ff8c1" />
+        <actionShapeMoniker Id="2d0d97ec-3eb2-43a1-ae3e-4fe457c7a12f" />
+      </nodes>
+    </controlFlowConnector>
+    <mergeNodeShape Id="9c5d697f-c249-4af5-859c-171a9e78e133" absoluteBounds="4.625, 14.125, 0.375, 0.375" customColor="185, 212, 238">
+      <mergeNodeMoniker Id="4a014859-b9a0-4192-ab43-f088b15fa59e" LastKnownName="Merge1" />
+      <relativeChildShapes />
+    </mergeNodeShape>
+    <controlFlowConnector edgePoints="[(4.63311923540171 : 7.05438076459829); (4.0413593727109 : 7.05438076459829); (4.0413593727109 : 14.3217594120225); (4.63425941202253 : 14.3217594120225)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="c984f355-000b-4a45-afa7-9cfbd13a91e7" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="aa894a0c-94b7-4942-9cdd-9334c9549be3" />
+        <mergeNodeShapeMoniker Id="9c5d697f-c249-4af5-859c-171a9e78e133" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(4.63351022517238 : 1.07101022517238); (3.45824099332382 : 1.07101022517238); (3.45824099332382 : 14.5275904889254); (4.63366445177453 : 14.5275904889254); (4.63366445177453 : 14.3211644517745)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="cbf1da7e-5279-480c-8d3a-6aad1b6c27b9" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="9e13b1d4-04fe-48fa-9a97-dd1f412ff8c1" />
+        <mergeNodeShapeMoniker Id="9c5d697f-c249-4af5-859c-171a9e78e133" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(4.8125 : 13.875); (4.8125 : 14.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="2fb21f41-7aec-4b6f-a7b2-0a84f1b78b29" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="f326fa4d-d752-48d8-93bb-ad2a36bb066a" />
+        <mergeNodeShapeMoniker Id="9c5d697f-c249-4af5-859c-171a9e78e133" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(7.0625 : 13.875); (7.0625 : 14.3125); (5 : 14.3125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="3adec02a-1a61-4741-8a35-f61372ae2672" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="b59c9d87-ca69-44c0-acf5-2cc846f89818" />
+        <mergeNodeShapeMoniker Id="9c5d697f-c249-4af5-859c-171a9e78e133" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(4.8125 : 14.5); (4.8125 : 15)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="11b6ef42-8192-48c1-b4e7-f5db4cbd0d94" />
+      <relativeChildShapes />
+      <nodes>
+        <mergeNodeShapeMoniker Id="9c5d697f-c249-4af5-859c-171a9e78e133" />
+        <activityFinalNodeShapeMoniker Id="58b81fb8-2b24-44cb-84dc-074c3954b87d" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="4c9e8d22-1550-4501-b294-7f79a866ac62" absoluteBounds="6.5, 8.125, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="9a758296-5c23-4df8-914f-7124c8e978d1" LastKnownName="Get similar word from list" />
+      <relativeChildShapes>
+        <outputPinShape Id="2b271e41-3445-4a9c-a9d4-77b680e3e73b" absoluteBounds="7, 8.5, 0.15, 0.15">
+          <outputPinMoniker Id="63aedaad-65b3-40f6-810a-7d3d20f85cc8" LastKnownName="SimilarWord" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.21875, 8.53125, 0.64646625518798828, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </actionShape>
+    <controlFlowConnector edgePoints="[(7.0625 : 7.875); (7.0625 : 8.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="94fcb40e-96e1-44fd-855e-2a70252454d0" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.1875, 7.8125, 0.99113857746124268, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <decisionNodeShapeMoniker Id="c648e428-d095-42a3-abb9-a2c0968cf19f" />
+        <actionShapeMoniker Id="4c9e8d22-1550-4501-b294-7f79a866ac62" />
+      </nodes>
+    </controlFlowConnector>
+    <objectFlowConnector edgePoints="[(7.075 : 8.65); (7.075 : 8.75212); (7.07312932607706 : 8.75212); (7.07312932607706 : 8.875)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="bb5781fd-cda4-4a9b-b0a5-a459dc759dae" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="2b271e41-3445-4a9c-a9d4-77b680e3e73b" />
+        <actionShapeMoniker Id="08a82f1e-9f38-4d3e-be15-6c1ac6310408" />
+      </nodes>
+    </objectFlowConnector>
+  </nestedChildShapes>
+</activityDiagram>
