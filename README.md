@@ -29,4 +29,6 @@ Required tools:
  * Specify the size of sets to be tested [2].
  * Click 'Test'.
 
+## Understanding the results:
+
 (under construction)
