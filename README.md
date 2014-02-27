@@ -29,13 +29,13 @@ Required tools:
 </div>
 
  * Specify the data to be trained and tested. The text should not have graphic accentuation and sentences should have more than 3 words.
- * Specify the range of sets to be tested. For example, if minimum number of sentences is 50, maximum number is 200, and size of each set is 50, then we will have sets with 50, 100, 150, and 200 sentences.
+ * Specify the range of sets to be tested. For example, if minimum number of sentences is 50, maximum number is 200, and size/increment for each set is 50, then we will have sets with 50, 100, 150, and 200 sentences respectivelly.
  * Click 'Evaluate'.
 
 ## Understanding the results:
 
-The tests consist of trainning 3 approaches (HTM, Levenstein Distance, and N-Gram) with a corpus containing well written sentences and then test them with mispelled sentences created from the first corpus.
+The tests consist of trainning 3 engines (HTM, Levenstein Distance, and N-Gram) with a corpus containing well written sentences and then test them with mispelled sentences created from the first corpus. These mispelled sentences will have at least one word that suffered an modification (insertion, deletion, replacement or transposition of characters).
 
 Two variables will be calculated and shown:
  * Performance: in other words, is the total time that each engine takes to evaluate and return the list of corrections for a set.
- * Accuracy: is the percentage of correct suggestions returned by engine over the real number of issues created.
+ * Accuracy: is the percentage of correct suggestions returned by an engine over the real number of issues created.
