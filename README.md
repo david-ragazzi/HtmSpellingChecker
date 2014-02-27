@@ -28,9 +28,9 @@ Required tools:
     <img title="Main Form" src="Doc/MainForm.png"/>
 </div>
 
- * Specify the text to be tested [1].
- * Specify the size of sets to be tested [2].
- * Click 'Test'.
+ * Specify the data to be trained and tested. The text should not have graphic accentuation and sentences should have more than 3 words.
+ * Specify the range of sets to be tested. For example, if minimum number of sentences is 50, maximum number is 200, and size of each set is 50, then we will have sets with 50, 100, 150, and 200 sentences.
+ * Click 'Evaluate'.
 
 ## Understanding the results:
 
