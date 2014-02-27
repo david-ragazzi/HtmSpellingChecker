@@ -25,7 +25,7 @@ Required tools:
 ## Run the tests:
 
 <div align="center">
-    <img title="Main Form" src="https://github.com/DavidRagazzi/HtmSpellingChecker/tree/Release/MainForm.png"/>
+    <img title="Main Form" src="HtmSpellingChecker/Doc/MainForm.png"/>
 </div>
 
 (put Main Form image here)
