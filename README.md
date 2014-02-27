@@ -34,4 +34,8 @@ Required tools:
 
 ## Understanding the results:
 
-(under construction)
+The tests consist of trainning 3 approaches (HTM, Levenstein Distance, and N-Gram) with a corpus containing well written sentences and then test them with mispelled sentences created from the first corpus.
+
+Two variables will be calculated and shown:
+ * Performance: in other words, is the total time that each engine takes to evaluate and return the list of corrections for a set.
+ * Accuracy: is the percentage of correct suggestions returned by engine over the real number of issues created.
