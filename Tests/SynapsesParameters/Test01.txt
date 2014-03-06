@@ -1,0 +1,271 @@
+InitialPermanence = 0.22f;
+
+ConnectedPerm = 0.20f;
+
+PermanenceInc = 0.0015f;
+
+PermanenceDec = 0.0010f;
+
+Reading file...
+Updating dictionary...
+Creating test sentences...
+
+===== Test #01 =====
+Checking corpus size...
+Sentences: 100
+Words: 975
+
+Trainning Levenshtein engine...
+Done.
+
+Trainning NGram engine...
+Accuracy (%): 58.14361
+Done.
+
+Initializing HTM engine...
+Trainning HTM engine...
+Cycles: 1, Accuracy (%): 35.11383
+Cycles: 2, Accuracy (%): 52.01401
+Cycles: 3, Accuracy (%): 60.33275
+Cycles: 4, Accuracy (%): 61.82137
+Done.
+
+Correct             Mispelled           Levenshtein         N-Gram              HTM                 
+small               smalxl              small               small               small               
+and                 amnd                and                 and                 and                 
+from                fom                 from                from                from                
+all                 al                  all                 all                 all                 
+edward              edwari              edward              edward              edward              
+ring                aing                ring                ring                ring                
+that                thta                                                                            
+buy                 byu                 by                  by                  by                  
+and                 sand                stand               and                 and                 
+them                tehem               them                them                them                
+next                ext                 next                next                next                
+but                 ut                  but                 but                 but                 
+edward              edwaid              edward              edward              edward              
+love                ltve                love                love                love                
+let                 lte                 late                late                late                
+prince              prnice                                                                          
+tall                tcall               tall                tall                tall                
+why                 cwhy                why                 why                 why                 
+he                  e                   me                  me                  he                  
+agreed              agred               agreed              agreed              agreed              
+edward              etward              edward              edward              edward              
+child               chilk               child               child               child               
+which               whihc                                                                           
+and                 nad                 had                 had                 had                 
+house               htouse              house               house               house               
+buckingham          buckikngham         buckingham          buckingham          buckingham          
+in                  n                   in                  in                  in                  
+dinner              dinne               dinner              dinner              dinner              
+waited              waated              wanted              waited              waited              
+angry               ongry               angry               angry               angry               
+to                  ot                  not                 not                 not                 
+where               wheer                                                                           
+sir                 ssir                sir                 sir                 sir                 
+has                 hmas                has                 has                 has                 
+father              ather               father              father              father              
+king                kin                 king                king                king                
+of                  wf                  of                  of                  of                  
+to                  tf                  to                  to                  to                  
+bring               brnig                                                                           
+replied             replide                                                                         
+dining              dianing             dining              dining              dining              
+could               couuld              could               could               could               
+time                tim                 time                time                time                
+did                 id                  did                 did                 did                 
+he                  ie                  lie                 he                  in                  
+described           deacribed           described           described           described           
+hansell             hanslel                                                                         
+his                 hsi                                                                             
+were                weere               were                were                were                
+have                jhave               have                have                have                
+stopped             sopped              stopped             stopped             stopped             
+very                ery                 very                very                very                
+stick               sticq               stick               stick               stick               
+shouted             shoutmd             shouted             shouted             shouted             
+book                book                                                                            
+and                 adn                 an                  an                  an                  
+was                 wras                was                 was                 was                 
+friday              fridaqy             friday              friday              friday              
+mr                  m                   m                   m                   mr                  
+the                 th                                                                              
+edward              udward              edward              edward              edward              
+listens             listenv             listens             listens             listens             
+was                 aws                 as                  as                  as                  
+with                iwth                                                                            
+stupid              stupikd             stupid              stupid              stupid              
+learn               lemarn              learn               learn               learn               
+the                 he                                                                              
+me                  e                   me                  me                  me                  
+do                  db                  do                  do                  do                  
+you                 yoi                 you                 you                 you                 
+you                 yuo                                                                             
+will                will                                                                            
+strong              strmong             strong              strong              strong              
+go                  igo                 ago                 ago                 ago                 
+edward              eward               edward              edward              edward              
+played              payed               played              played              played              
+but                 tut                 but                 but                 but                 
+times               tifes               times               times               times               
+was                 aws                 as                  as                  as                  
+george              georeg                                                                          
+make                mpake               make                make                make                
+opened              opeqned             opened              opened              opened              
+am                  m                                                                               
+not                 ot                  not                 not                 not                 
+like                liwe                life                like                like                
+can                 crn                 can                 can                 can                 
+different           dfiferent                                                                       
+could               colud               cold                cold                cold                
+and                 angd                and                 and                 and                 
+king                kling               king                king                king                
+began               bean                began               began               began               
+wales               ales                wales               wales               wales               
+terrible            terbible            terrible            terrible            terrible            
+home                wome                some                home                some                
+replied             rpelied                                                                         
+people              poeple                                                                          
+of                  aof                 of                  of                  of                  
+he                  ehe                 the                 the                 he                  
+wear                wea                 weak                wear                weak                
+look                lok                 look                look                look                
+
+Non-Words                      Levenshtein      N-Gram         HTM
+Accuracy (%):                       63.000      69.000      69.000
+Performance (s):                     0.221       0.287      13.627
+
+Correct             Mispelled           Levenshtein         N-Gram              HTM                 
+in                  if                                                                              
+there               these                                                       there               
+from                from                                    from                                    
+all                 call                                    all                                     
+was                 war                                                         was                 
+mrs                 mr                                                                              
+pay                 may                                     pay                                     
+that                what                                    that                that                
+me                  he                                                                              
+my                  may                                     my                                      
+small               shall                                   small               small               
+was                 as                                      was                 was                 
+and                 any                                                         and                 
+so                  go                                                                              
+the                 she                                     the                                     
+in                  if                                                                              
+man                 mean                                                                            
+said                sad                                     said                said                
+very                every                                   very                very                
+mary                may                                                                             
+said                paid                                                        said                
+be                  he                                                                              
+family              family                                                                          
+rooms               room                                    rooms               rooms               
+story               storm                                   story               story               
+and                 an                                                          and                 
+room                rooms                                   room                room                
+we                  we                                                                              
+waited              wanted                                                      waited              
+was                 was                                     was                 was                 
+up                  us                                                                              
+and                 any                                                                             
+the                 tie                                     the                 the                 
+yet                 yes                                     yet                                     
+no                  so                                                                              
+for                 for                                     for                                     
+woman               woman                                   woman               woman               
+said                sail                                    said                said                
+bring               ring                                    bring                                   
+the                 then                                                        the                 
+there               where                                                       there               
+not                 lot                                     not                 not                 
+time                tie                                                         time                
+to                  top                                     to                  to                  
+he                  be                                                                              
+is                  if                                                                              
+thin                than                                    thin                                    
+was                 as                                      was                                     
+had                 has                                                                             
+have                gave                                    have                                    
+the                 the                                     the                 the                 
+got                 not                                     got                                     
+the                 she                                     the                                     
+he                  we                                                                              
+look                look                                                                            
+arm                 am                                      arm                                     
+lost                last                                    lost                                    
+took                cook                                    took                                    
+the                 the                                                         the                 
+not                 not                                     not                                     
+not                 now                                     not                 not                 
+he                  be                                                                              
+mr                  me                                                                              
+you                 your                                    you                 you                 
+are                 are                                                                             
+you                 you                                     you                 you                 
+boring              bring                                   boring              boring              
+mr                  my                                                                              
+do                  no                                                                              
+are                 are                                                                             
+weak                week                                    weak                                    
+be                  me                                                                              
+king                kind                                                        king                
+stay                star                                    stay                                    
+my                  my                                      my                  my                  
+not                 hot                                     not                 not                 
+house               houses                                  house                                   
+at                  am                                                                              
+of                  if                                                                              
+and                 hand                                    and                 and                 
+you                 your                                    you                 you                 
+and                 end                                     and                 and                 
+old                 gold                                    old                                     
+skirt               shirt                                   skirt                                   
+like                live                                    like                like                
+why                 why                                                         why                 
+and                 hand                                    and                 and                 
+could               would                                   could                                   
+castle              castle                                  castle                                  
+king                kings                                                       king                
+began               begin                                   began               began               
+eyes                yes                                     eyes                                    
+he                  her                                                         he                  
+home                some                                    home                                    
+yet                 get                                                                             
+you                 your                                    you                 you                 
+the                 he                                      the                 the                 
+was                 has                                     was                 was                 
+not                 now                                     not                 not                 
+will                well                                                        will                
+
+Real-Words                     Levenshtein      N-Gram         HTM
+Accuracy (%):                        0.000      57.000      46.000
+Performance (s):                     0.007       0.033      11.667
+
+
+===== Summary =====
+
+Corpuses size:
+        Test   Sequences       Words
+          01         100         975
+
+
+Accuracy for Non-Word Errors:
+        Test Levenshtein      N-Gram         HTM
+          01      63.000      69.000      69.000
+
+
+Performance for Non-Word Errors:
+        Test Levenshtein      N-Gram         HTM
+          01       0.221       0.287      13.627
+
+
+Accuracy for Real-Word Errors:
+        Test Levenshtein      N-Gram         HTM
+          01       0.000      57.000      46.000
+
+
+Performance for Real-Word Errors:
+        Test Levenshtein      N-Gram         HTM
+          01       0.007       0.033      11.667
+
