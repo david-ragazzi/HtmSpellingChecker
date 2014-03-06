@@ -44,10 +44,10 @@ namespace SpellingChecker.HTM
 
             // Set Proximal Synapse parameter
             var proximalSynapseParams = new SynapseParams();
-			proximalSynapseParams.InitialPermanence = 0.31f;
-			proximalSynapseParams.ConnectedPerm = 0.19f;
-			proximalSynapseParams.PermanenceInc = 0.07f;
-			proximalSynapseParams.PermanenceDec = 0.035f;
+			proximalSynapseParams.InitialPermanence = 0.30f;
+			proximalSynapseParams.ConnectedPerm = 0.24f;
+			proximalSynapseParams.PermanenceInc = 0.0060f;
+			proximalSynapseParams.PermanenceDec = 0.0045f;
 
             // Set Distal Synapse parameter
             var distalSynapseParams = new SynapseParams();
