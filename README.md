@@ -1,7 +1,7 @@
 # HtmSpellingChecker
 
 HtmSpellingChecker is an experimental spelling checker using machine learning (in special, HTM neural networks) as approach and was the theme of my master's degree dissertation (which earned me an A+ grade).
-Basically you train the network with a set of real world texts. After that, you give it a sentence to analyse, and if find an anomaly (ie a mispelling word) it suggest the best correction based on prediction.
+Basically you train the network with a set of real world texts. After that, you give it a sentence to analyse, and if finds an anomaly (ie a misspelling word) it suggests the best correction based on prediction.
 
 Most spelling checkers on the market (including those used by search engines like Google or text editors like MS-Word), often provide correction suggestions based merely on orthographic similarity. However this is a critical problem when they present suggestions of corrections that do not make sense in current context or when the spelling checker ignores misspelled words because such words exist in its dictionary.
 
